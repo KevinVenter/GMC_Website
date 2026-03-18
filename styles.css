@@ -1,87 +1,183 @@
+html {
+    overflow-y: scroll; /* always show scrollbar */
+}
+
 body {
     background-image: url(Images/img_Background4.png);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
+
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #f9f9f9;
     position: relative;
     width: 100%;
     bottom: 0;
 }
-.flyer{
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    background-image:url("Images/img_flyer_Background.png");
+
+/* Flyer container */
+.flyer {
+    background: rgba(0,0,0,0.4); /* subtle overlay for readability */
+    background-image: url("Images/img_flyer_Background.png");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     padding: 30px;
-    max-width: 700px;
-    margin: auto;
-    border: 2px solid #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
-.title{
+
+/* Intro section styling */
+.intro {
+    background: rgba(255, 255, 255, 0.08); /* translucent white overlay */
+    border-radius: 10px;
+    padding: 25px 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: #004080;
-    margin-bottom: 20px;
-}
-.section h2 {
-  font-size: 22px;
-  color: #222;
-  border-bottom: 2px solid #004080;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
 }
 
-.section h3 {
-  font-size: 18px;
-  color: #004080;
-  margin-top: 15px;
-}
-
-.dropdown{
-    cursor: pointer;
-    background: #000000;
+.intro h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
     color: #fff;
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 4px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.highlight {
+    color: rgba(211, 148, 11, 0.9); /* gold highlight */
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.intro h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    font-weight: 500;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+
+/* Section headers */
+.section h2 {
+    background: rgba(90, 45, 7, 0.85);
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* Dropdown headers */
+.dropdown {
+    cursor: pointer;
+    background: rgba(148, 72, 10, 0.85);
+    color: #fff;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-radius: 6px;
     transition: background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
-.dropdown:hover{
-    background: #0059b3;
+.dropdown:hover {
+    background: rgba(211, 148, 11, 0.9);
 }
 
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* Dropdown content (accordion lists) */
 .dropdown-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    margin-left: 20px;
-    line-height: 1.6;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    margin: 0;
+    padding: 0;
 }
 
 .dropdown-content.show {
-    max-height: 500px;
+    max-height: 500px; /* or use JS scrollHeight */
+    padding: 12px 0;
 }
 
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  line-height: 1.6;
+.dropdown-content ul {
+    background: rgba(255, 255, 255, 0.15); /* translucent white background */
+    border-radius: 6px;
+    line-height: 1.8;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    margin: 0;
+    padding: 10px 40px; /* space for bullets */
 }
 
+/* Custom bullets */
+.dropdown-content ul li::marker {
+    content: "•";              /* custom bullet */
+    color: rgba(211, 148, 11, 0.9); /* gold theme */
+    font-size: 1.2em;
+}
+
+/* List items fade-in */
+.dropdown-content ul li {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.dropdown-content.show ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation */
+.dropdown-content.show ul li:nth-child(1) { transition-delay: 0.1s; }
+.dropdown-content.show ul li:nth-child(2) { transition-delay: 0.2s; }
+.dropdown-content.show ul li:nth-child(3) { transition-delay: 0.3s; }
+.dropdown-content.show ul li:nth-child(4) { transition-delay: 0.4s; }
+.dropdown-content.show ul li:nth-child(5) { transition-delay: 0.5s; }
+
+/* Contact section */
 .contact {
-  margin-top: 25px;
-  text-align: center;
-  font-size: 16px;
-  color: #f9f9f9;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 35px;
+    color: #f5f5f5;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
