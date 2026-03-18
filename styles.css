@@ -1,0 +1,87 @@
+body {
+    background-image: url(Images/img_Background4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f9f9f9;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+.flyer{
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    background-image:url("Images/img_flyer_Background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+    border: 2px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.title{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 20px;
+}
+.section h2 {
+  font-size: 22px;
+  color: #222;
+  border-bottom: 2px solid #004080;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.section h3 {
+  font-size: 18px;
+  color: #004080;
+  margin-top: 15px;
+}
+
+.dropdown{
+    cursor: pointer;
+    background: #000000;
+    color: #fff;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.dropdown:hover{
+    background: #0059b3;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.dropdown-content.show {
+    max-height: 500px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.contact {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 16px;
+  color: #f9f9f9;
+}
